@@ -405,6 +405,15 @@ footer {
 .f-copy span { color: var(--orange2); }
 .f-logo { font-family: var(--syne); font-size: 0.9rem; font-weight: 700; color: rgba(255,255,255,0.15); }
 
+
+/* Grille avec une seule carte : pleine largeur */
+#projects .projects-grid--single {
+  grid-template-columns: 1fr;
+}
+#projects .projects-grid--single .proj-card {
+  max-width: 760px;
+}
+
 /* REVEAL */
 .r { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .r.in { opacity: 1; transform: translateY(0); }
@@ -778,7 +787,7 @@ footer {
       <div class="sec-tag" style="margin-bottom:8px;">Projet de recherche</div>
       <div class="sec-title" style="font-size:clamp(1.4rem,2.5vw,2rem);">Deep Learning & <span>Optimisation Stochastique</span></div>
     </div>
-    <div class="projects-grid">
+    <div class="projects-grid projects-grid--single">
 
       <div class="proj-card r">
         <div class="proj-img" data-label="SGD · Ajouter une image">
@@ -860,7 +869,7 @@ footer {
 
       <div class="proj-card r">
         <div class="proj-img" data-label="NLP · Ajouter une image">
-          <img src="https://images.unsplash.com/photo-1516110833967-0b5716ca1387?w=800&q=80" alt="NLP LLM"/>
+          <img src="https://images.unsplash.com/photo-1655720828018-edd2daec9349?w=800&q=80" alt="NLP LLM"/>
         </div>
         <div class="proj-body">
           <div class="proj-tag">NLP · LLM · Classification de Texte</div>
