@@ -276,7 +276,6 @@ h1.hero-name .outline {
   position: relative; z-index: 1;
 }
 .proj-card:hover .proj-img img { transform: scale(1.04); }
-/* Placeholder si pas d'image */
 .proj-img-placeholder {
   width: 100%; height: 100%;
   display: flex; align-items: center; justify-content: center;
@@ -330,6 +329,7 @@ h1.hero-name .outline {
   display: flex; align-items: center; gap: 6px;
   white-space: nowrap;
   transition: color 0.2s, gap 0.2s;
+  text-decoration: none;
 }
 .proj-card:hover .proj-link { color: var(--orange); gap: 10px; }
 
@@ -395,7 +395,6 @@ h1.hero-name .outline {
 }
 .cf-btn:hover { background: var(--orange2); transform: translateY(-2px); }
 
-/* FOOTER */
 footer {
   background: var(--black); border-top: 1px solid rgba(255,255,255,0.06);
   padding: 20px 64px;
@@ -405,21 +404,13 @@ footer {
 .f-copy span { color: var(--orange2); }
 .f-logo { font-family: var(--syne); font-size: 0.9rem; font-weight: 700; color: rgba(255,255,255,0.15); }
 
+#projects .projects-grid--single { grid-template-columns: 1fr; }
+#projects .projects-grid--single .proj-card { max-width: 760px; }
 
-/* Grille avec une seule carte : pleine largeur */
-#projects .projects-grid--single {
-  grid-template-columns: 1fr;
-}
-#projects .projects-grid--single .proj-card {
-  max-width: 760px;
-}
-
-/* REVEAL */
 .r { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .r.in { opacity: 1; transform: translateY(0); }
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
 
-/* RESPONSIVE */
 @media(max-width:1000px){
   nav { padding: 0 24px; }
   #hero, .sec-wrap { padding-left: 24px; padding-right: 24px; }
@@ -468,9 +459,11 @@ footer {
 <section id="hero">
   <div class="hero-inner">
     <div class="hero-text">
-      <div class="hero-label">Data Scientist · Actuariat · Finance Quantitative</div>
+      <!-- CHANGEMENT 1 : Finance Quant -> Finance · Économétrie -->
+      <div class="hero-label">Data Scientist · Actuariat · Finance · Économétrie</div>
       <h1 class="hero-name">Malek Saidi</h1>
-      <div class="hero-role">Data Science &nbsp;·&nbsp; IA &nbsp;·&nbsp; Actuariat &nbsp;·&nbsp; Finance</div>
+      <!-- CHANGEMENT 2 : suppression Finance Quant dans le role -->
+      <div class="hero-role">Data Science &nbsp;·&nbsp; IA &nbsp;·&nbsp; Actuariat &nbsp;·&nbsp; Finance &amp; Économétrie</div>
       <p class="hero-bio">
         Je m'intéresse à la modélisation statistique, à la prévision
         et à l'analyse de données, à la croisée des statistiques, de la finance,
@@ -479,7 +472,8 @@ footer {
       <div class="hero-domains">
         <span class="domain-pill active">Machine Learning</span>
         <span class="domain-pill active">Actuariat</span>
-        <span class="domain-pill active">Finance Quant</span>
+        <!-- CHANGEMENT 3 : Finance Quant -> Finance & Économétrie -->
+        <span class="domain-pill active">Finance &amp; Économétrie</span>
         <span class="domain-pill">Deep Learning</span>
         <span class="domain-pill">Risk Modeling</span>
         <span class="domain-pill">Computer Vision</span>
@@ -490,8 +484,6 @@ footer {
         <a href="https://github.com/malek-lab" target="_blank" class="btn-outline">GitHub</a>
       </div>
     </div>
-
-    <!-- 3D Neural Network -->
     <div class="hero-canvas-wrap">
       <canvas id="nn-canvas"></canvas>
       <div class="canvas-label">neural network · real-time simulation</div>
@@ -516,7 +508,7 @@ footer {
         </p>
         <p class="r d1">
           Mon profil est ancré dans les mathématiques et les statistiques,
-          avec une spécialisation en actuariat, finance quantitative
+          avec une spécialisation en actuariat, finance
           et IA générative. Ce qui m'intéresse, c'est comprendre
           mathématiquement les modèles — le comment et le pourquoi
           derrière chaque méthode.
@@ -560,8 +552,9 @@ footer {
           <div class="exp-item r d2">
             <div class="exp-num">03</div>
             <div>
-              <div class="exp-title">Finance Quantitative</div>
-              <div class="exp-desc">Gestion des risques, mesures de performance (Sharpe, VaR), optimisation de portefeuille.</div>
+              <!-- CHANGEMENT 4 : Finance Quantitative -> Finance & Économétrie -->
+              <div class="exp-title">Finance &amp; Économétrie</div>
+              <div class="exp-desc">Gestion des risques, mesures de performance (Sharpe, VaR), optimisation de portefeuille, modélisation économétrique.</div>
             </div>
           </div>
           <div class="exp-item r d3">
@@ -585,7 +578,6 @@ footer {
       <div class="sec-title">Cours & <span>outils maîtrisés</span></div>
     </div>
     <div class="skills-grid">
-
       <div class="skill-card r">
         <div class="sk-course">Statistiques & Modélisation Stochastique</div>
         <div class="sk-name">Analyse Statistique & Processus Aléatoires</div>
@@ -600,7 +592,6 @@ footer {
           <span class="sk-tool">Statsmodels</span>
         </div>
       </div>
-
       <div class="skill-card r d1">
         <div class="sk-course">Machine Learning & Datamining</div>
         <div class="sk-name">Classification & Modélisation Prédictive</div>
@@ -617,7 +608,6 @@ footer {
           <span class="sk-tool">SAS</span>
         </div>
       </div>
-
       <div class="skill-card r d2">
         <div class="sk-course">Actuariat & Modélisation du Risque</div>
         <div class="sk-name">Risk Modeling & Théorie des Valeurs Extrêmes</div>
@@ -633,7 +623,6 @@ footer {
           <span class="sk-tool">Statsmodels</span>
         </div>
       </div>
-
       <div class="skill-card r">
         <div class="sk-course">Deep Learning & Optimisation</div>
         <div class="sk-name">Réseaux de Neurones & Optimisation Stochastique</div>
@@ -649,7 +638,6 @@ footer {
           <span class="sk-tool">Adam/AdamW</span>
         </div>
       </div>
-
       <div class="skill-card r d1">
         <div class="sk-course">Big Data & Bases de Données</div>
         <div class="sk-name">Ingénierie des Données & Systèmes Distribués</div>
@@ -668,7 +656,6 @@ footer {
           <span class="sk-tool">Hive</span>
         </div>
       </div>
-
       <div class="skill-card r d2">
         <div class="sk-course">Optimisation & Analyse Numérique</div>
         <div class="sk-name">Optimisation Non-Linéaire & Analyse Matricielle</div>
@@ -685,7 +672,6 @@ footer {
           <span class="sk-tool">GitHub</span>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -697,9 +683,7 @@ footer {
       <div class="sec-tag">03 · Réalisations</div>
       <div class="sec-title">Mes <span>projets</span></div>
     </div>
-    <!-- ── RUBRIQUE 1 : PROJETS PRINCIPAUX ── -->
     <div class="projects-grid">
-
       <a href="https://github.com/malek-lab/prime_insurance_prediction" target="_blank" class="proj-card r">
         <div class="proj-img" data-label="Assurance · Ajouter une image">
           <img src="https://raw.githubusercontent.com/malek-lab/malek-lab.github.io/main/images/icendie.png" alt="Prédiction prime assurance"/>
@@ -719,7 +703,6 @@ footer {
           </div>
         </div>
       </a>
-
       <div class="proj-card r d1">
         <div class="proj-img" data-label="Serta Group · Ajouter une image">
           <img src="https://raw.githubusercontent.com/malek-lab/malek-lab.github.io/main/images/serta_prev.png" alt="Prévisions Serta"/>
@@ -739,7 +722,6 @@ footer {
           </div>
         </div>
       </div>
-
       <div class="proj-card r d2">
         <div class="proj-img" data-label="Amazon · Ajouter une image">
           <img src="https://raw.githubusercontent.com/malek-lab/malek-lab.github.io/main/amazon.png" alt="Amazon comportement achat"/>
@@ -759,7 +741,6 @@ footer {
           </div>
         </div>
       </div>
-
       <a href="https://github.com/malek-lab/Projet_structuration" target="_blank" class="proj-card r d3">
         <div class="proj-img" data-label="Agence · Ajouter une image">
           <img src="https://raw.githubusercontent.com/malek-lab/malek-lab.github.io/main/images/immo.png" alt="Agence immobilière"/>
@@ -779,16 +760,14 @@ footer {
           </div>
         </div>
       </a>
-
     </div>
 
-    <!-- ── RUBRIQUE 2 : DEEP LEARNING & OPTIMISATION ── -->
+    <!-- Deep Learning -->
     <div style="padding: 64px 0 32px; border-top: 1px solid var(--border); margin-top: 2px;">
       <div class="sec-tag" style="margin-bottom:8px;">Projet de recherche</div>
       <div class="sec-title" style="font-size:clamp(1.4rem,2.5vw,2rem);">Deep Learning & <span>Optimisation Stochastique</span></div>
     </div>
     <div class="projects-grid projects-grid--single">
-
       <div class="proj-card r">
         <div class="proj-img" data-label="SGD · Ajouter une image">
           <img src="https://raw.githubusercontent.com/malek-lab/malek-lab.github.io/main/RN.png" alt="Optimisation SGD"/>
@@ -808,16 +787,14 @@ footer {
           </div>
         </div>
       </div>
-
     </div>
 
-    <!-- ── RUBRIQUE 3 : APPRENTISSAGE PAR RENFORCEMENT ── -->
+    <!-- RL -->
     <div style="padding: 64px 0 32px; border-top: 1px solid var(--border); margin-top: 2px;">
       <div class="sec-tag" style="margin-bottom:8px;">Apprentissage par Renforcement</div>
       <div class="sec-title" style="font-size:clamp(1.4rem,2.5vw,2rem);">DQN & <span>PPO</span></div>
     </div>
     <div class="projects-grid">
-
       <div class="proj-card r">
         <div class="proj-img" data-label="DQN · Ajouter une image">
           <img src="https://raw.githubusercontent.com/malek-lab/malek-lab.github.io/main/images/lunar.png" alt="Deep Q-Network"/>
@@ -837,7 +814,6 @@ footer {
           </div>
         </div>
       </div>
-
       <div class="proj-card r d1">
         <div class="proj-img" data-label="PPO · Ajouter une image">
           <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80" alt="Proximal Policy Optimization"/>
@@ -857,17 +833,16 @@ footer {
           </div>
         </div>
       </div>
-
     </div>
 
-    <!-- ── RUBRIQUE 4 : NLP / LLM / VISION ── -->
+    <!-- NLP / LLM / Vision -->
     <div style="padding: 64px 0 32px; border-top: 1px solid var(--border); margin-top: 2px;">
       <div class="sec-tag" style="margin-bottom:8px;">IA Générative · NLP · Vision</div>
       <div class="sec-title" style="font-size:clamp(1.4rem,2.5vw,2rem);">LLM & <span>Traitement d'Image</span></div>
     </div>
     <div class="projects-grid">
-
-      <div class="proj-card r">
+      <!-- CHANGEMENT 5 : lien GitHub ajouté sur le projet NLP -->
+      <a href="https://github.com/malek-lab/IA_GEN/tree/main" target="_blank" class="proj-card r">
         <div class="proj-img" data-label="NLP · Ajouter une image">
           <img src="https://raw.githubusercontent.com/malek-lab/malek-lab.github.io/main/images/text.png" alt="NLP LLM"/>
         </div>
@@ -882,17 +857,16 @@ footer {
           </div>
           <div class="proj-footer">
             <div class="proj-stack"><span>Python</span><span>HuggingFace</span><span>Transformers</span><span>BERT</span><span>PyTorch</span></div>
-            <div class="proj-link">TP disponible</div>
+            <div class="proj-link">GitHub &rarr;</div>
           </div>
         </div>
-      </div>
-
+      </a>
       <div class="proj-card r d1">
         <div class="proj-img" data-label="Vision · Ajouter une image">
           <img src="https://raw.githubusercontent.com/malek-lab/malek-lab.github.io/main/hugging.png" alt="Computer Vision"/>
         </div>
         <div class="proj-body">
-          <div class="proj-tag">Computer Vision · Détection · Segmentation · Signal</div>
+          <div class="proj-tag">Computer Vision · Traitement d'Images · Détection · Segmentation · Signal</div>
           <div class="proj-name">Détection, Segmentation & Classification d'Images</div>
           <div class="proj-desc">
             J'ai travaillé sur des tâches de vision par ordinateur : classification, détection d'objets et segmentation sur des jeux de données réels. J'ai comparé les grandes architectures de référence du domaine.
@@ -906,7 +880,6 @@ footer {
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -921,7 +894,7 @@ footer {
     <div class="contact-grid">
       <div>
         <p class="contact-intro r">
-          Ouverte aux opportunités en data science, actuariat et finance quantitative.
+          Ouverte aux opportunités en data science, actuariat et finance.
           N'hésitez pas à me contacter.
         </p>
         <div class="contact-links">
@@ -966,7 +939,6 @@ footer {
 </footer>
 
 <script>
-// ── NEURAL NETWORK — WebGL pur, zéro dépendance ──
 (function () {
   const canvas = document.getElementById('nn-canvas');
   const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
@@ -981,7 +953,6 @@ footer {
   resize();
   window.addEventListener('resize', resize);
 
-  // ── Shaders ──
   const VS = `
     attribute vec3 aPos;
     uniform mat4 uMVP;
@@ -1018,25 +989,17 @@ footer {
   const nodeProg = mkProg(VS, FS_NODE);
   const lineProg = mkProg(VS, FS_LINE);
 
-  // ── Network layout ──
   const LAYERS = [4, 6, 6, 3];
   const GAP_X = 2.8, GAP_Y = 1.3;
 
-  // Compute node 3D positions
-  const nodes = []; // {li, ni, x, y, z}
+  const nodes = [];
   LAYERS.forEach((cnt, li) => {
     const totalH = (cnt - 1) * GAP_Y;
     for (let ni = 0; ni < cnt; ni++) {
-      nodes.push({
-        li, ni,
-        x: -((LAYERS.length - 1) * GAP_X) / 2 + li * GAP_X,
-        y: -totalH / 2 + ni * GAP_Y,
-        z: 0
-      });
+      nodes.push({ li, ni, x: -((LAYERS.length - 1) * GAP_X) / 2 + li * GAP_X, y: -totalH / 2 + ni * GAP_Y, z: 0 });
     }
   });
 
-  // Edges
   const edges = [];
   for (let li = 0; li < LAYERS.length - 1; li++) {
     const aNodes = nodes.filter(n => n.li === li);
@@ -1044,7 +1007,6 @@ footer {
     aNodes.forEach(a => bNodes.forEach(b => edges.push({ a, b, li, ni: a.ni, nj: b.ni })));
   }
 
-  // ── Buffers ──
   const nodeBuf = gl.createBuffer();
   const nodePosData = new Float32Array(nodes.flatMap(n => [n.x, n.y, n.z]));
   gl.bindBuffer(gl.ARRAY_BUFFER, nodeBuf);
@@ -1055,47 +1017,11 @@ footer {
   gl.bindBuffer(gl.ARRAY_BUFFER, lineBuf);
   gl.bufferData(gl.ARRAY_BUFFER, linePosData, gl.STATIC_DRAW);
 
-  // ── Math helpers ──
   function mat4() { return new Float32Array(16); }
-  function identity(m) {
-    m[0]=1;m[1]=0;m[2]=0;m[3]=0;
-    m[4]=0;m[5]=1;m[6]=0;m[7]=0;
-    m[8]=0;m[9]=0;m[10]=1;m[11]=0;
-    m[12]=0;m[13]=0;m[14]=0;m[15]=1;
-    return m;
-  }
-  function perspective(m, fov, asp, near, far) {
-    const f = 1 / Math.tan(fov / 2);
-    m[0]=f/asp; m[1]=0; m[2]=0; m[3]=0;
-    m[4]=0; m[5]=f; m[6]=0; m[7]=0;
-    m[8]=0; m[9]=0; m[10]=(far+near)/(near-far); m[11]=-1;
-    m[12]=0; m[13]=0; m[14]=(2*far*near)/(near-far); m[15]=0;
-    return m;
-  }
-  function rotY(m, a) {
-    const c=Math.cos(a), s=Math.sin(a);
-    m[0]=c; m[2]=s; m[8]=-s; m[10]=c;
-    return m;
-  }
-  function rotX(m, a) {
-    const c=Math.cos(a), s=Math.sin(a);
-    m[5]=c; m[6]=-s; m[9]=s; m[10]=c;
-    return m;
-  }
-  function mul(out, a, b) {
-    for(let r=0;r<4;r++) for(let c=0;c<4;c++) {
-      let v=0; for(let k=0;k<4;k++) v+=a[r+k*4]*b[k+c*4];
-      out[r+c*4]=v;
-    }
-    return out;
-  }
-  function translate(m, tx, ty, tz) {
-    identity(m);
-    m[12]=tx; m[13]=ty; m[14]=tz;
-    return m;
-  }
+  function identity(m) { m[0]=1;m[1]=0;m[2]=0;m[3]=0;m[4]=0;m[5]=1;m[6]=0;m[7]=0;m[8]=0;m[9]=0;m[10]=1;m[11]=0;m[12]=0;m[13]=0;m[14]=0;m[15]=1; return m; }
+  function perspective(m, fov, asp, near, far) { const f = 1 / Math.tan(fov / 2); m[0]=f/asp;m[1]=0;m[2]=0;m[3]=0;m[4]=0;m[5]=f;m[6]=0;m[7]=0;m[8]=0;m[9]=0;m[10]=(far+near)/(near-far);m[11]=-1;m[12]=0;m[13]=0;m[14]=(2*far*near)/(near-far);m[15]=0; return m; }
+  function mul(out, a, b) { for(let r=0;r<4;r++) for(let c=0;c<4;c++) { let v=0; for(let k=0;k<4;k++) v+=a[r+k*4]*b[k+c*4]; out[r+c*4]=v; } return out; }
 
-  // ── Signals ──
   let signals = [];
   function spawnSignal() {
     const ni = Math.floor(Math.random() * LAYERS[0]);
@@ -1110,15 +1036,11 @@ footer {
   }
   for (let i = 0; i < 4; i++) setTimeout(spawnSignal, i * 400);
 
-  // ── Active state per node/edge ──
   let nodeActive = new Array(nodes.length).fill(0);
   let edgeActive = new Array(edges.length).fill(0);
-
-  // Edge lookup
   const edgeMap = {};
   edges.forEach((e, i) => { edgeMap[`${e.li}_${e.ni}_${e.nj}`] = i; });
 
-  // ── Draw ──
   gl.enable(gl.BLEND);
   gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
 
@@ -1131,29 +1053,16 @@ footer {
   function draw() {
     requestAnimationFrame(draw);
     t += 0.013; spawnT += 0.013;
-
     const W = canvas.width, H = canvas.height;
     gl.viewport(0, 0, W, H);
     gl.clearColor(0, 0, 0, 0);
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-
-    // Update perspective aspect
     perspective(proj, Math.PI/5, W/H, 0.1, 50);
-
-    // Rotation matrix
     identity(ry); ry[0]=Math.cos(Math.sin(t*0.28)*0.45); ry[2]=Math.sin(Math.sin(t*0.28)*0.45); ry[8]=-ry[2]; ry[10]=ry[0];
     identity(rx); const ax=Math.sin(t*0.18)*0.18; rx[5]=Math.cos(ax); rx[6]=-Math.sin(ax); rx[9]=Math.sin(ax); rx[10]=Math.cos(ax);
-    mul(tmp, ry, rx);
-    mul(tmp, view, tmp);
-    mul(mvp, proj, tmp);
-
-    // Spawn signals
+    mul(tmp, ry, rx); mul(tmp, view, tmp); mul(mvp, proj, tmp);
     if (spawnT > 0.65) { spawnT = 0; if (signals.length < 6) spawnSignal(); }
-
-    // Reset
     nodeActive.fill(0); edgeActive.fill(0);
-
-    // Advance signals
     signals = signals.filter(sig => {
       sig.t += 0.028;
       const si = Math.floor(sig.t);
@@ -1168,8 +1077,6 @@ footer {
       }
       return true;
     });
-
-    // ── Draw lines ──
     gl.useProgram(lineProg);
     const lPos = gl.getAttribLocation(lineProg, 'aPos');
     const lMVP = gl.getUniformLocation(lineProg, 'uMVP');
@@ -1178,14 +1085,11 @@ footer {
     gl.bindBuffer(gl.ARRAY_BUFFER, lineBuf);
     gl.enableVertexAttribArray(lPos);
     gl.vertexAttribPointer(lPos, 3, gl.FLOAT, false, 0, 0);
-
     edges.forEach((e, i) => {
       if (edgeActive[i]) gl.uniform4f(lCol, 0.91, 0.31, 0.04, 0.85);
       else gl.uniform4f(lCol, 0.15, 0.15, 0.15, 0.35);
       gl.drawArrays(gl.LINES, i * 2, 2);
     });
-
-    // ── Draw nodes ──
     gl.useProgram(nodeProg);
     const nPos = gl.getAttribLocation(nodeProg, 'aPos');
     const nMVP = gl.getUniformLocation(nodeProg, 'uMVP');
@@ -1194,64 +1098,39 @@ footer {
     gl.bindBuffer(gl.ARRAY_BUFFER, nodeBuf);
     gl.enableVertexAttribArray(nPos);
     gl.vertexAttribPointer(nPos, 3, gl.FLOAT, false, 0, 0);
-
     nodes.forEach((n, i) => {
-      if (nodeActive[i]) {
-        const pulse = 0.7 + 0.3 * Math.sin(t * 10);
-        gl.uniform4f(nCol, 0.91, 0.31 + pulse*0.1, 0.04, 1.0);
-      } else {
-        gl.uniform4f(nCol, 0.12, 0.12, 0.12, 0.9);
-      }
+      if (nodeActive[i]) { const pulse = 0.7 + 0.3 * Math.sin(t * 10); gl.uniform4f(nCol, 0.91, 0.31 + pulse*0.1, 0.04, 1.0); }
+      else gl.uniform4f(nCol, 0.12, 0.12, 0.12, 0.9);
       gl.drawArrays(gl.POINTS, i, 1);
     });
   }
   draw();
 })();
 
-
-// ── IMAGE FALLBACK ──
 document.querySelectorAll('.proj-img img').forEach(img => {
-  img.addEventListener('error', function() {
-    this.style.display = 'none';
-  });
-  img.addEventListener('load', function() {
-    this.style.display = 'block';
-    this.parentElement.style.background = 'transparent';
-  });
-  if (img.complete && img.naturalWidth === 0) {
-    img.style.display = 'none';
-  }
+  img.addEventListener('error', function() { this.style.display = 'none'; });
+  img.addEventListener('load', function() { this.style.display = 'block'; this.parentElement.style.background = 'transparent'; });
+  if (img.complete && img.naturalWidth === 0) img.style.display = 'none';
 });
 
-// ── SCROLL REVEAL ──
 const obs = new IntersectionObserver(
   es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }),
   { threshold: 0.1 }
 );
 document.querySelectorAll('.r').forEach(el => obs.observe(el));
 
-// ── COUNT UP ──
 document.querySelectorAll('[data-count]').forEach(el => {
   const target = +el.dataset.count;
   let n = 0;
-  const iv = setInterval(() => {
-    n = Math.min(n + 1, target);
-    el.textContent = n;
-    if (n >= target) clearInterval(iv);
-  }, 80);
+  const iv = setInterval(() => { n = Math.min(n + 1, target); el.textContent = n; if (n >= target) clearInterval(iv); }, 80);
 });
 
-// ── FORM ──
 function handleSubmit(e) {
   e.preventDefault();
   const btn = e.target.querySelector('.cf-btn');
   btn.textContent = 'Message envoyé';
   btn.style.background = '#2d6a4f';
-  setTimeout(() => {
-    btn.textContent = 'Envoyer';
-    btn.style.background = '';
-    e.target.reset();
-  }, 3000);
+  setTimeout(() => { btn.textContent = 'Envoyer'; btn.style.background = ''; e.target.reset(); }, 3000);
 }
 </script>
 </body>
